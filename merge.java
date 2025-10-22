@@ -22,7 +22,7 @@ class Main {
 
         long mergetime = mergefin-mergestart;
         System.out.println("algorithm: merge\ttime: "+mergetime+"ms\tarraysize:"+arrsize);
-        
+
         long quickstart = System.currentTimeMillis();
         Sort.Quick(quickarr);
         long quickfin = System.currentTimeMillis();
@@ -104,17 +104,17 @@ class Sort {
         MergeSlave(arr,tmparr,mid,hi);
 
         //merge
-        int l=lo,h=mid;
+        int c=lo,l=lo,h=mid;
         while (l<mid && h<hi) {
             //compare and fill accordingly
-            if (arr[l]<arr[h]) tmparr[l]=arr[l++];
-            else tmparr[h]=arr[h++];
+            if (arr[l]<arr[h]) tmparr[c++]=arr[l++];
+            else tmparr[c++]=arr[h++];
         }
         //fill with lo vals if out of hi
-        while (l<mid) tmparr[l]=arr[l++];
+        while (l<mid) tmparr[c++]=arr[l++];
 
         //fill with hi vals if out of lo
-        while (h<hi) tmparr[h]=arr[h++];
+        while (h<hi) tmparr[c++]=arr[h++];
 
         //insert temparr into main arr
         for (int i=lo; i<hi; i++)
