@@ -37,6 +37,13 @@ class Main {
         long shelltime = shellfin-shellstart;
         System.out.println("algorithm: shell\ttime: "+shelltime+"ms\tarraysize:"+arrsize);
 
+        long insstart = System.currentTimeMillis();
+        Sort.Insertion(insarr);
+        long insfin = System.currentTimeMillis();
+
+        long instime = insfin-insstart;
+        System.out.println("algorithm: insertion\ttime: "+instime+"ms\tarraysize:"+arrsize);
+
         long selstart = System.currentTimeMillis();
         Sort.Selection(selarr);
         long selfin = System.currentTimeMillis();
@@ -50,13 +57,6 @@ class Main {
 
         long bubtime = bubfin-bubstart;
         System.out.println("algorithm: bubble\ttime: "+bubtime+"ms\tarraysize:"+arrsize);
-
-        long insstart = System.currentTimeMillis();
-        Sort.Insertion(insarr);
-        long insfin = System.currentTimeMillis();
-
-        long instime = insfin-insstart;
-        System.out.println("algorithm: insertion\ttime: "+instime+"ms\tarraysize:"+arrsize);
     }
 
     private static int[] RandomizedArray(int size, int start, int end) {
